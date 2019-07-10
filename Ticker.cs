@@ -24,15 +24,19 @@ namespace stock_purchase_class
 
     public void BuyShares(int numShares, double sharePrice)
     {
+      var tradeTime = DateTime.Now;
       NumberOfShares += numShares;
       MoneyInvested += numShares * sharePrice;
+      
       ListOfTrades.Add(new StockTrade(
-        DateTime.Now, //  now ??
+        tradeTime,
         numShares,
         sharePrice,
         true,
         TickerSymbol
       ));
+
+      
     }
 
 

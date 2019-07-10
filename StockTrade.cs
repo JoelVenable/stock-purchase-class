@@ -31,14 +31,14 @@ namespace stock_purchase_class
     {
       Console.WriteLine(
         $"{(IsPurchase ? "Bought" : "Sold")} {NumberOfShares} shares of {TickerSymbol}" +
-        $" on {TradeDate}.  PPS: {PricePerShare}, Invested: ${GetInvested}");
+        $" on {TradeDate}.  PPS: {PricePerShare}, {GetInvested()}");
     }
 
 
     private string GetInvested()
     {
       double dollars = NumberOfShares * PricePerShare;
-      return IsPurchase ? dollars : -dollars;
+      return IsPurchase ? $"Invested: ${dollars}" : $"Received: ${dollars}";
     }
   }
 }
