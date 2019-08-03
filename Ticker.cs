@@ -9,6 +9,8 @@ namespace stock_purchase_class
     public double NumberOfShares { get; private set; }
     public double MoneyInvested { get; private set; }
 
+        public double SomeVar { get; private set; }
+    
 
 
     private List<StockTrade> ListOfTrades = new List<StockTrade>();
